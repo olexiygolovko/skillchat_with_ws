@@ -171,18 +171,22 @@ class App {
     }
   
     addMessage(message) {
+      const date = new Date()
+      const dateNode = document.createElement("div")
       const newMessageNode = document.createElement("div")
       const avatarNode = document.createElement("img")
       const nameNode = document.createElement("div")
       const textNode = document.createElement("div")
       newMessageNode.className = "message"
+      dateNode.className = "date-time"
+      dateNode.textContent = date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds()
       avatarNode.src = message.avatar || "static/images/noavatar.png"
       avatarNode.className = "avatar"
       nameNode.textContent = message.user + ":"
       nameNode.className = "message-name"
       textNode.textContent = message.text
       textNode.className = "message-text"
-      newMessageNode.append(avatarNode, nameNode, textNode)
+      newMessageNode.append(avatarNode, nameNode, textNode, dateNode)
       this.chatNode.appendChild(newMessageNode)
     }
   

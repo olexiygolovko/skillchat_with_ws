@@ -138,4 +138,9 @@ body {
     grid-column: 2;
     grid-row: 2;
   }
+
+  .date-time {
+    font-size: 15px;
+    color:rgb(5, 5, 5);
+  }
   

@@ -9,16 +9,16 @@ class App {
       container.innerHTML = `
         <div class="room-settings">
           <div>
-            <div>Мои комнаты:</div>
+            <div>My contacts:</div>
             <div class="myrooms"></div>
           </div>
           <div>
-            <div>Все комнаты:</div>
+            <div>All contacts:</div>
             <div class="allrooms"></div>
           </div>
           <form class="addroom">
             <input name="roomname" type="text">
-            <button type="submit">Создать комнату</button>
+            <button type="submit">Create contact</button>
           </form>
         </div>
       `
@@ -37,7 +37,7 @@ class App {
   
           if (room.owner === userInfo.id) {
             const roomDeleteBtn = document.createElement("button")
-            roomDeleteBtn.textContent = "Удалить"
+            roomDeleteBtn.textContent = "Delete"
             roomDeleteBtn.onclick = async () => {
               const response = await deleteRoom(room.id)
               if (response.status === 200 || response.status === 204) {
@@ -47,7 +47,7 @@ class App {
             roomNode.appendChild(roomDeleteBtn)
           } else {
             const roomLeaveBtn = document.createElement("button")
-            roomLeaveBtn.textContent = "Выйти"
+            roomLeaveBtn.textContent = "Out"
             roomLeaveBtn.onclick = async () => {
               const response = await leaveRoom(room.id)
               if (response.status === 200 || response.status === 204) {
@@ -70,7 +70,7 @@ class App {
           roomNameNode.textContent = room.name
   
           const roomLeaveBtn = document.createElement("button")
-          roomLeaveBtn.textContent = "Присоединиться"
+          roomLeaveBtn.textContent = "Join"
           roomLeaveBtn.onclick = async () => {
             const response = await joinRoom(room.id)
             if (response.status === 200 || response.status === 204) {
@@ -107,7 +107,7 @@ class App {
         <div class="chat"></div>
         <form class="message-form">
           <textarea name="message"></textarea>
-          <button type="submit" class="btn sendmessage">Отправить сообщение</button>
+          <button type="submit" class="btn sendmessage">Send message</button>
         </form>
       `
   

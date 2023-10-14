@@ -10,10 +10,10 @@
 <form method="post" enctype="multipart/form-data">
   {% csrf_token %}
   {{ form.as_p }}
-  <button type="submit">Изменить</button>
+  <button type="submit">Change</button>
   <p>
-    <a href="{% url 'accounts:password_change' %}">Сменить пароль</a>
-    <a href="{% url 'accounts:logout' %}">Выйти</a>
+    <a href="{% url 'accounts:password_change' %}">Change password</a>
+    <a href="{% url 'accounts:logout' %}">Out</a>
   </p>
 </form>
 </body>

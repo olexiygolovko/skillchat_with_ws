@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Чат-Чат</title>
+  <title>Chat-Chat</title>
   <link href="{% static 'css/style.css' %}" rel="stylesheet">
 </head>
 <body>
@@ -24,7 +24,7 @@
 <script>
   const csrfToken = "{{ csrf_token }}"
   const userInfo = {
-    id: {{ request.user.id }},
+    id: "{{ request.user.id }}",
     name: "{{ request.user.name }}",
     avatar: "{{ request.user.avatar }}",
   }
